@@ -1,7 +1,7 @@
 import dayjs from "dayjs";
 import { useEffect, useState } from "react";
 import { api } from "../server/axios";
-import { generateDatesFromYearBeginning } from "../utils/generate-dates-from-year-beginning";
+import { generateRangeDatesFromYearStart } from "../utils/generate-range-between-dates";
 import { HabitDay } from "./HabitDay";
 
 const weekDays = [
@@ -14,7 +14,7 @@ const weekDays = [
   'S',
 ];
 
-const summaryDates = generateDatesFromYearBeginning()
+const summaryDates = generateRangeDatesFromYearStart()
 
 const minimumSummaryDatesSize = 18 * 7 // 18 weeks
 const amountOfDaysToFill = minimumSummaryDatesSize - summaryDates.length
